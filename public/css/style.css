@@ -7,6 +7,7 @@
     --background-light:#ecf0f1;
     --text-color:#444;
     --text-color-light: #fff;
+    --danger: #ff7675;
     --box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
     --border: 1px solid #eee;
 
@@ -32,6 +33,10 @@ h1, p{
     margin: 0;
 }
 
+h1 {
+    margin-bottom: 1rem;
+}
+
 /* container */
 
 .container{
@@ -41,6 +46,35 @@ h1, p{
     flex-flow: column;
     color: var(--text-color);
 }
+
+/* text */
+.text-danger {
+    color: var(--danger);
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+
+
+/* button */
+.btn {
+    background-color: white;
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    border: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: var(--text-color-light);
+
+}
+
 
 /* header */
 header {
@@ -90,4 +124,18 @@ footer {
 
 .todo-container h1 {
     text-align: center;
+}
+
+.todo-form{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.todo-form input {
+    flex: 1;
+    margin-right: 0.5rem;
+    border: var(--border);
+    border-radius: 3px;
+    padding: 10px 15px;
 }
