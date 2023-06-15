@@ -4,6 +4,7 @@
 
     $filename = __DIR__ . "/data/todos.json";
     $error = '';
+    $todo ='';
     $todos = [];
 
     if(file_exists($filename)){
@@ -48,8 +49,8 @@
         <div class="content">
             <div class="todo-container">
                 <h1>Ma Todo</h1>
-                <form action="" method="post" class="todo-form">
-                    <input name="todo" type="text">
+                <form class="todo-form" action="/" method="post">
+                    <input value="<?= $todo ?>" name="todo" type="text">
                     <button class="btn btn-primary">Ajouter</button>
                 </form>
                 <?php if($error) : ?>
@@ -57,10 +58,12 @@
                 <?php endif ?>
                 <ul class="todo-list">
                     <?php foreach($todos as $t): ?>
-                        <li class="todo-item">
-                            <span class="todo-name"><?= $t['name']; ?></span>
-                            <button class="btn btn-primary btn-small">Valider</button>
-                            <span class="btn btn-danger btn-small">Supprimer</span>
+                        <li class="todo-item <?= $t['done'] ? 'low-opacity' : '' ?>">
+                            <span class="todo-name"><?= $t['name'] ?></span>
+                            <a href="/edit-todo.php?id=<?= $t['id'] ?>">
+                                <button class="btn btn-primary btn-small"><?= $t['done'] ? 'Annuler' : 'Valider' ?></button>
+                            </a>
+                            <button class="btn btn-danger btn-small">Supprimer</button>
                         </li>
                     <?php endforeach ?>
                 </ul>

@@ -90,6 +90,10 @@ ul {
     font-size: 1.4rem;
 }
 
+.low-opacity{
+    opacity: 0.5;
+}
+
 /* header */
 header {
     background-color: var(--primary);
